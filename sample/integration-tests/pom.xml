@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>maven_integration_test_coverage</groupId>
-        <artifactId>maven_integration_test_coverage</artifactId>
-        <version>1.0</version>
+        <artifactId>sample</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,18 +16,17 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <!--<version>2.3</version>-->
             </plugin>
+	        <!-- merge all instrumented classes from specified modules into this module -->
             <plugin>
-                <groupId>com.opencredo.mojo</groupId>
-                <artifactId>opencredo-merge-plugin</artifactId>
+                <groupId>org.oaky.mojo</groupId>
+                <artifactId>cobertura-merge-plugin</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <configuration>
-                    <outputDirectory>${project.build.directory}/generated-classes/cobertura</outputDirectory>
                     <includes>
                         <instrumentArtifact>
                             <groupId>maven_integration_test_coverage</groupId>
-                            <artifactId>sampl-app</artifactId>
+                            <artifactId>app</artifactId>
                         </instrumentArtifact>
                     </includes>
                 </configuration>
@@ -62,16 +61,14 @@
     <dependencies>
         <dependency>
             <groupId>maven_integration_test_coverage</groupId>
-            <artifactId>sampl-app</artifactId>
+            <artifactId>app</artifactId>
             <version>${project.version}</version>
         </dependency>
-<!--
         <dependency>
           <groupId>net.sourceforge.cobertura</groupId>
           <artifactId>cobertura-runtime</artifactId>
           <type>pom</type>
         </dependency>
--->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
