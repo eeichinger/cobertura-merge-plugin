@@ -1,4 +1,4 @@
-package com.opencredo;
+package org.oaky.mojo.coberturamerge;
 
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -24,8 +24,8 @@ public class AddSourcesMojo extends AbstractMergeMojo {
             return;
         }
 
-        for(InstrumentArtifact instrumentArtifact:includes) {
-            MavenProject projectArtifact = resolveProject(instrumentArtifact);
+        for(InstrumentedModule instrumentedModule : includeModules) {
+            MavenProject projectArtifact = resolveProject(instrumentedModule);
             if (projectArtifact == null) {
                 throw new MojoExecutionException("no match found");
             }

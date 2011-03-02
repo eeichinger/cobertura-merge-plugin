@@ -13,10 +13,10 @@ in your (integration-)test module, specify
                 <version>0.0.1-SNAPSHOT</version>
                 <configuration>
                     <includes>
-                        <instrumentArtifact>
+                        <instrumentedModule>
                             <groupId>maven_integration_test_coverage</groupId>
                             <artifactId>app</artifactId>
-                        </instrumentArtifact>
+                        </instrumentedModule>
                     </includes>
                 </configuration>
                 <executions>

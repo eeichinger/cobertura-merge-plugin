@@ -1,9 +1,7 @@
-package com.opencredo;
+package org.oaky.mojo.coberturamerge;
 
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.FileUtils;
 
@@ -35,7 +33,7 @@ public abstract class AbstractMergeMojo extends AbstractMojo {
      * @parameter
      * @required
      */
-    public InstrumentArtifact[] includes;
+    public InstrumentedModule[] includeModules;
 
     /**
      * The output directory
@@ -59,8 +57,8 @@ public abstract class AbstractMergeMojo extends AbstractMojo {
         }
     }
 
-    protected MavenProject resolveProject(InstrumentArtifact instrumentArtifact) {
-        String instrumentArtifactId = instrumentArtifact.groupId + ":" + instrumentArtifact.artifactId;
+    protected MavenProject resolveProject(InstrumentedModule instrumentedModule) {
+        String instrumentArtifactId = instrumentedModule.groupId + ":" + instrumentedModule.artifactId;
         getLog().info("looking for project " + instrumentArtifactId);
         List<MavenProject> mavenProjects = session.getSortedProjects();
         for(MavenProject project:mavenProjects) {

@@ -23,12 +23,12 @@
                 <artifactId>cobertura-merge-plugin</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
                 <configuration>
-                    <includes>
-                        <instrumentArtifact>
+                    <includeModules>
+                        <instrumentedModule>
                             <groupId>maven_integration_test_coverage</groupId>
                             <artifactId>app</artifactId>
-                        </instrumentArtifact>
-                    </includes>
+                        </instrumentedModule>
+                    </includeModules>
                 </configuration>
                 <executions>
                     <execution>

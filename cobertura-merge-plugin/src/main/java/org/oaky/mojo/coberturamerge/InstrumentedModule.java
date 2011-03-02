@@ -1,6 +1,6 @@
-package com.opencredo;
+package org.oaky.mojo.coberturamerge;
 
-public class InstrumentArtifact {
+public class InstrumentedModule {
     public String groupId;
     public String artifactId;
 
@@ -20,10 +20,10 @@ public class InstrumentArtifact {
         this.artifactId = artifactId;
     }
 
-    public InstrumentArtifact() {
+    public InstrumentedModule() {
     }
 
-    public InstrumentArtifact(String groupId, String artifactId) {
+    public InstrumentedModule(String groupId, String artifactId) {
         this.groupId = groupId;
         this.artifactId = artifactId;
     }
