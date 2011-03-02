@@ -9,11 +9,12 @@ import java.io.File;
 
 public class MySampleServiceIT {
 
-    @BeforeClass
-    public static void initCob() {
-        File f = CoverageDataFileHandler.getDefaultDataFile();
+//    @BeforeClass
+//    public static void initCob() {
+//        File f = CoverageDataFileHandler.getDefaultDataFile();
 //        Assert.assertEquals("false", f.getAbsolutePath());
-    }
+//    }
+
     @Test
     public void exerciseMySampleService() {
         MyIntegrationTestSampleService myService = new MyIntegrationTestSampleService();
